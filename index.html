@@ -10,8 +10,9 @@
       padding: 0;
     }
     body {
-      background: #000;
+      background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 70%, #fff 100%);
       overflow: hidden;
+      position: relative;
     }
     #wrap {
       perspective: 800px;
@@ -55,6 +56,56 @@
       margin-top: -600px;
       transform: rotateX(90deg);
     }
+    /* 卡通风格云朵 */
+    .cloud {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+    }
+    .cloud::after,
+    .cloud::before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .cloud1 {
+      width: 200px;
+      height: 60px;
+      top: 50px;
+      left: 10%;
+    }
+    .cloud1::after {
+      width: 100px;
+      height: 100px;
+      top: -50px;
+      left: 20px;
+    }
+    .cloud1::before {
+      width: 120px;
+      height: 120px;
+      top: -40px;
+      right: 20px;
+    }
+    .cloud2 {
+      width: 250px;
+      height: 70px;
+      top: 150px;
+      left: 60%;
+    }
+    .cloud2::after {
+      width: 120px;
+      height: 120px;
+      top: -60px;
+      left: 30px;
+    }
+    .cloud2::before {
+      width: 140px;
+      height: 140px;
+      top: -50px;
+      right: 30px;
+    }
   </style>
 </head>
 <body>
@@ -63,6 +114,11 @@
       <p></p>
     </div>
   </div>
+
+  <!-- 添加卡通风格的云朵 -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+
   <script type="text/javascript">
     window.onload = function() {
       const aBox = document.getElementsByClassName('box')[0];
